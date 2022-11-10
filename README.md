@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?height=280&text=Welcome&&fontSize=80&&animation=fadeIn&&type=transparent&fontcolor=12035B&section=header&desc=berandaNuguri's%20GitHub&descAlign=60&fontAlignY=40&D)
+![header](https://capsule-render.vercel.app/api?height=280&text=Welcome&&fontSize=80&&animation=fadeIn&&type=transparent&section=header&desc=berandaNuguri's%20GitHub&descAlign=60&fontAlignY=40&D)
 
 # Profile
 > Hanbat National University 
@@ -25,5 +25,5 @@
 |March. 2023 ~ | Data structure | C.E. 2nd grade class | H.L. Jang |
 
 # Contact
-(mailto:kumdingso@gmail.com)![Gmail Badge](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)
+<a href="mailto:kumdingso@gmail.com">![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)
 <a href="https://www.instagram.com/ddong_s00/">![Instagram Badge](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)
