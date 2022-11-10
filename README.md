@@ -23,4 +23,5 @@
 |March. 2023 ~ | Data structure | C.E. 2nd grade class | H.L. Jang |
 
 # Contact
-![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white) ##kumdingso@gmail.com
+![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)
+#### kumdingso@gmail.com
