@@ -1,3 +1,5 @@
+<img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=Welcome!&fontSize=90" />
+
 # Profile
 > Hanbat National University 
 > </br>Computer Engeenering 2nd year
@@ -23,5 +25,5 @@
 |March. 2023 ~ | Data structure | C.E. 2nd grade class | H.L. Jang |
 
 # Contact
-<a href="mailto:nacl3084@gmail.com">![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)
-<a href="https://www.instagram.com/ddong_s00/">![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)
+(mailto:kumdingso@gmail.com)![Gmail Badge](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)
+<a href="https://www.instagram.com/ddong_s00/">![Instagram Badge](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)
