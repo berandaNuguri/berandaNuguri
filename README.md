@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=transparent&color=auto&fontColor=191970&height=200&section=header&text=Welcome\nberandaNuguri's GitHub&fontSize=90" />
+<img src="https://capsule-render.vercel.app/api?type=transparent&color=auto&height=200&section=header&text=Welcome\nberandaNuguri's GitHub&fontSize=90" />
 
 # Profile
 > Hanbat National University 
