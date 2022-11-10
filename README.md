@@ -1,7 +1,7 @@
-# Profile
-> Hanbat National University 
-> </br>Computer Engeenering 2nd year
-> </br>AIM. Lab.
+
+> ##Hanbat National University 
+> </br>##Computer Engeenering 2nd year
+> </br>##AIM. Lab.
 
 # Competitions
 |Platform|Name|Summary|Team|Prize|Link|
