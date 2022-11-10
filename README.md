@@ -14,13 +14,13 @@
 **AIM Lab.**
 |     *Date*      |         *Type*        |          *Contents*         |   *Details* |
 |:-------------:|:-------------------:|:-------------------------:|:----------:|
-|July.2022|Join Lab.|Undergraduate Researcher|Join "ArtificialIntelligence & MediaLaboratory (AIM) Lab." Research Topic : Computer Vision, Hanbat Univ.<br>[AIM Lab. SITE](https://sites.google.com/view/aim-lab-hbnu/home?authuser=0)|
-|July.2022 ~ Sep.2022|Seminar|Seminar about AI|Study ML, DL Base|
+|July. 2022|Join Lab.|Undergraduate Researcher|Join "ArtificialIntelligence & MediaLaboratory (AIM) Lab." Research Topic : Computer Vision, Hanbat Univ.<br>[AIM Lab. SITE](https://sites.google.com/view/aim-lab-hbnu/home?authuser=0)|
+|July. 2022 ~ Sep.2022|Seminar|Seminar about AI|Study ML, DL Base|
 
 # Teaching Experience
 |     *Date*      |         *Class*   |        *Details*      | *Professor* |
 |:-------------:|:-------------------:|:---------------------:|:------------:|
-|March.2023 ~ | Data structure | C.E. 2nd grade class | H.L. Jang |
+|March. 2023 ~ | Data structure | C.E. 2nd grade class | H.L. Jang |
 
 # Contact
 ✉️ kumdingso@gmail.com
