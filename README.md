@@ -1,9 +1,11 @@
-![header](https://capsule-render.vercel.app/api?height=280&text=Welcome&&fontSize=80&&animation=fadeIn&&type=transparent&section=header&desc=berandaNuguri's%20GitHub&fontColor=4B0082&descAlign=55&fontAlignY=40&D)
+![header](https://capsule-render.vercel.app/api?height=280&text=Welcome&&fontSize=80&&animation=fadeIn&&type=transparent&section=header&desc=berandaNuguri's%20GitHub&fontColor=auto&descAlign=55&fontAlignY=40&D)
 
 # Profile
 > Hanbat National University 
 > </br>Computer Engineering 2nd year
 > </br>AIM. Lab.
+> 
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=berandaNuguri&hide=prs,issues&theme=tokyonight)]
 
 # Competitions
 |   *Platform*  |   *Name*  |   *Summary*   |   *Team*  |   *Prize* |   *Link*  |
