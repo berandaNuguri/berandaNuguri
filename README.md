@@ -1,11 +1,11 @@
-![berandaNuguri_github_Header](https://user-images.githubusercontent.com/115712125/201824218-5e7a3e3b-a13e-456f-9ad0-f74b025267a9.png)
+![berandaNuguri_README_banner](https://user-images.githubusercontent.com/115712125/201857181-9f63a836-febe-48f2-8c6a-43458f2c6a62.png)
 
 # Profile
 > Hanbat National University 
 > </br>Computer Engineering 2nd year
 > </br>AIM. Lab.
 > 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=berandaNuguri&hide=prs,issues&theme=dracula)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=berandaNuguri&hide=prs,issues&theme=dark)
 
 # Competitions
 |   *Platform*  |   *Name*  |   *Summary*   |   *Team*  |   *Prize* |   *Link*  |
