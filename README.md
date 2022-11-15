@@ -5,7 +5,7 @@
 > </br>Computer Engineering 2nd year
 > </br>AIM. Lab.
 > 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=berandaNuguri&hide=prs,issues&theme=tokyonight)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=berandaNuguri&hide=prs,issues&theme=dracula)
 
 # Competitions
 |   *Platform*  |   *Name*  |   *Summary*   |   *Team*  |   *Prize* |   *Link*  |
