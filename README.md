@@ -12,8 +12,7 @@
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |DACON|SW 중심대학 AI 경진대회 예선|Classification|AIM. Lab.|🥇1st (1/192)|https://dacon.io/competitions/official/235902/leaderboard|
 |DACON|SW 중심대학 AI 경진대회 본선|OCR|AIM. Lab.|🥉10th (10/77)|https://dacon.io/competitions/official/235970/leaderboard|
-|Share&Tech|소외된 이웃과 함께하는 창의설계 경진대회|Section E|AIM|🥇HNU President's Award|![AIM HNU President's Award]("https//")|
-
+|Share&Tech|소외된 이웃과 함께하는 창의설계 경진대회|Section E|AIM|🥇HNU President's Award|[AIM President's Award](https://user-images.githubusercontent.com/115712125/203897708-1a7bc4c2-fe91-4744-a34a-a2d949e9762a.png)|
 
 # Internship
 **AIM Lab.**
