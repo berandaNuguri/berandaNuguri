@@ -8,7 +8,7 @@
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=berandaNuguri&hide=prs,issues&theme=dark)
 
 # Competitions
-|   *Platform*  |   *Name*  |   *Summary*   |   *Team*  |   *Prize* |   *Link*  |
+|   *Platform*  |  *Name*  |   *Summary*   |   *Team*  |  *Prize* |   *Link*  |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |DACON|SW 중심대학 AI 경진대회 예선|Classification|AIM. Lab.|🥇1st (1/192)|https://dacon.io/competitions/official/235902/leaderboard|
 |DACON|SW 중심대학 AI 경진대회 본선|OCR|AIM. Lab.|🥉10th (10/77)|https://dacon.io/competitions/official/235970/leaderboard|
