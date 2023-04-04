@@ -2,7 +2,7 @@
 
 # Profile
 > Hanbat National University 
-> </br>Computer Engineering 2nd year
+> </br>Computer Engineering 3rd year
 > </br>AIM. Lab.
 > 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=berandaNuguri&hide=prs,issues&theme=dark)
