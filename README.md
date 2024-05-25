@@ -25,6 +25,9 @@
 |     *Date*      |         *Class*   |        *Details*      | *Professor* |
 |:-------------:|:-------------------:|:---------------------:|:------------:|
 |March. 2023 ~ | Data structure | C.E. 2nd grade class | H.L. Jang |
+|March. 2024 ~ | Artificial Intelligence | C.E. 3rd grade class | H.L. Jang |
+|March. 2024 ~ | AI&Machine Learning | C.E. Graduate class | H.L. Jang |
+
 
 # Contact
 <a href="mailto:kumdingso@gmail.com">![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)
