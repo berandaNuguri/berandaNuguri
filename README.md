@@ -2,7 +2,7 @@
 
 # Profile
 > Hanbat National University 
-> </br>Computer Engineering 3rd year
+> </br>Computer Engineering 4th year
 > </br>AIM. Lab.
 > 
 <!-- ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=berandaNuguri&hide=prs,issues&theme=dark) -->
@@ -13,6 +13,7 @@
 |DACON|SW 중심대학 AI 경진대회 예선|Classification|AIM. Lab.|🥇1st (1/192)|https://dacon.io/competitions/official/235902/leaderboard|
 |DACON|SW 중심대학 AI 경진대회 본선|OCR|AIM. Lab.|🥉10th (10/77)|https://dacon.io/competitions/official/235970/leaderboard|
 |Share&Tech|소외된 이웃과 함께하는 창의설계 경진대회|Section E|AIM|🥇HNU President's Award|[[AIM]HNU President's Award](https://user-images.githubusercontent.com/115712125/203897708-1a7bc4c2-fe91-4744-a34a-a2d949e9762a.png)|
+|Codalab| Snapshot Spectral Imaging Face Anti-spoofing Challenge Phase 1| FAS | AIM_Lab |3rd(3/19)|https://codalab.lisn.upsaclay.fr/competitions/17908#results|
 
 # Internship
 **AIM Lab.**
