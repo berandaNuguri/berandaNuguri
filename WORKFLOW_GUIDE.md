@@ -1,25 +1,25 @@
 # WORKFLOW_GUIDE
 
-> GitHub에는 실행에 필요한 코드·공유 설정·의존성·필수 고정 리소스·최소 문서만 올린다.
-> CSV, figures, 데이터, 학습 가중치, 실험 결과, 원고, 로그는 로컬 또는 별도 저장소에서 관리한다.
+> Upload only the code, shared configuration, dependencies, required static resources, and minimal documentation needed to run a project.
+> Keep CSV files, figures, datasets, trained weights, experiment results, manuscripts, and logs locally or in separate storage.
 
-- 작성·수정: 2026-11-04 (Asia/Seoul)
-- 버전: 1.0
-- 적용 범위: 개인 GitHub 프로젝트의 저장소 구성, 연구·대회 코드 구조 정리, 업로드와 유지·보수
-- 이 문서는 구조를 바꾸는 기준이다. 문서 등록만으로 로컬 폴더 이동이나 연구 코드 업로드가 수행되지는 않는다.
+- Created / updated: 2026-11-04 (Asia/Seoul)
+- Version: 1.1
+- Scope: Repository organization, research and competition code structure, uploads, and maintenance for personal GitHub projects.
+- This document defines how to reorganize projects. Publishing it does not move local directories or upload research code automatically.
 
-## 1. 저장소와 로컬 분류 폴더
+## 1. Repositories and Local Grouping Directories
 
-독립적으로 설치·실행·버전·공개 범위를 관리할 프로젝트마다 저장소를 만든다.
-연구는 기본적으로 논문·독립 연구별, 대회는 대회·참가 회차별로 나눈다.
+Create a separate repository for each project whose installation, execution, versions, and visibility are managed independently.
+For research, use one repository per paper or independent study by default. For competitions, use one per competition or independent edition.
 
 ```text
-로컬 작업공간/                         # 이 상위 폴더는 Git 저장소가 아님
+local-workspace/                      # This parent is not a Git repository
 ├── research/
-│   ├── ida-steganalysis/             # 독립 Git 저장소
-│   └── jpeg-aware-steganalysis/      # 독립 Git 저장소
+│   ├── ida-steganalysis/             # Independent Git repository
+│   └── jpeg-aware-steganalysis/      # Independent Git repository
 ├── competitions/
-│   └── <competition-slug>/           # 독립 Git 저장소
+│   └── <competition-slug>/           # Independent Git repository
 ├── apps/
 │   └── <app-slug>/
 ├── tools/
@@ -29,7 +29,7 @@
 ```
 
 ```text
-GitHub 계정/                          # 아래 항목은 각각 별도 저장소
+github-account/                       # Each item below is a separate repository
 ├── ida-steganalysis
 ├── jpeg-aware-steganalysis
 ├── <competition-slug>
@@ -38,99 +38,99 @@ GitHub 계정/                          # 아래 항목은 각각 별도 저장�
 └── <upstream-fork>
 ```
 
-- 로컬 폴더명과 원격 저장소명은 달라도 된다. 기존 로컬 폴더명을 바꾸는 일은 별도로 판단한다.
-- 같은 연구의 모델·baseline·ablation은 같은 저장소의 모듈과 설정으로 관리한다.
-- 같은 대회의 라운드는 같은 저장소의 설정으로 관리하고, 독립적인 대회·회차는 분리한다.
-- 학회판·저널 확장판은 코드와 실험을 공유하는 정도에 따라 같은 저장소와 태그로 관리할 수 있다.
-- 별도 앱·도구·라이브러리는 연구 저장소에 섞지 않는다.
-- 저장소명은 소문자·숫자·하이픈을 사용한다. 대회 연도·회차처럼 식별에 필요한 정보만 이름에 포함한다.
-- 외부 코드 수정은 Fork 또는 출처·기준 commit·수정 이력을 추적할 수 있는 방식으로 관리한다.
-- 기존 저장소·대회 코드는 실제 작업 요청이 있을 때 개별적으로 정리한다. 이 가이드가 일괄 변경을 뜻하지 않는다.
+- Local directory names and remote repository names may differ. Decide separately whether to rename an existing local directory.
+- Keep models, baselines, and ablations for the same study in one repository, organized through modules and configuration.
+- Manage rounds of the same competition through configuration in one repository. Separate independent competitions or editions.
+- A conference paper and its journal extension may share a repository and use tags, depending on how much code and experimentation they share.
+- Keep independent apps, tools, and libraries out of research repositories.
+- Use lowercase letters, numbers, and hyphens in repository names. Include identifying details, such as a competition year or edition, only when useful.
+- Manage changes to external code through a fork or another approach that preserves its source, base commit, and modification history.
+- Reorganize existing repositories and competition code individually when requested. This guide does not authorize a bulk migration.
 
-## 2. 연구·ML 코드의 공통 목표 구조
+## 2. Common Target Structure for Research and ML Code
 
-새 연구와 구조를 정리하는 연구는 다음 역할과 경로를 공통 기준으로 사용한다.
-사용하지 않는 빈 폴더는 만들지 않는다. 아래 명령·파일명은 목표 양식이며 실제 구현과 README를 함께 맞춘다.
+Use the following roles and paths as the common structure for new studies and research projects being reorganized.
+Do not create unused empty directories. The commands and filenames below describe the target layout; update the implementation and README together.
 
 ```text
 <repository>/
-├── README.md                         # 목적, 환경, 설치, 자료 준비, 실행, 검증
-├── AGENTS.md                         # 해당 프로젝트의 작업·검증 지침
+├── README.md                         # Purpose, environment, setup, data preparation, execution, checks
+├── AGENTS.md                         # Project-specific work and verification instructions
 ├── .gitignore
-├── pyproject.toml                    # 패키지·의존성·설치 설정
-├── <lock-file>                       # 선택한 도구의 잠금 파일, 사용할 때 포함
+├── pyproject.toml                    # Package, dependency, and installation configuration
+├── <lock-file>                       # Include the selected tool's lock file when used
 ├── configs/
-│   ├── default.yaml                  # 공유 기본값
-│   ├── local.example.yaml            # 서버별 경로 설정 양식
-│   ├── experiments/                  # 실험 조건·모델 선택·seed
-│   └── transforms/                   # 전처리·augmentation 설정, 필요할 때
+│   ├── default.yaml                  # Shared defaults
+│   ├── local.example.yaml            # Template for machine-specific paths
+│   ├── experiments/                  # Experiment conditions, model selection, seeds
+│   └── transforms/                   # Preprocessing and augmentation configuration, when needed
 ├── src/
-│   └── <package_name>/               # 예: ida_steganalysis
+│   └── <package_name>/               # Example: ida_steganalysis
 │       ├── __init__.py
-│       ├── models/                   # 모델·attention·baseline 구현
-│       ├── data/                     # Dataset·loader·전처리·CSV 생성 로직
-│       ├── engine/                   # 학습·평가·추론 로직
-│       ├── analysis/                 # 필요한 분석·시각화 생성 코드
-│       ├── utils/                    # 공통 함수
-│       └── resources/                # 실행에 필수인 작은 고정 커널 등
+│       ├── models/                   # Models, attention modules, baselines
+│       ├── data/                     # Datasets, loaders, preprocessing, CSV generation logic
+│       ├── engine/                   # Training, evaluation, inference logic
+│       ├── analysis/                 # Required analysis and visualization generation code
+│       ├── utils/                    # Shared helpers
+│       └── resources/                # Small static kernels and other required resources
 ├── scripts/
-│   ├── train.py                      # 얇은 실행 진입점
+│   ├── train.py                      # Thin execution entry point
 │   ├── evaluate.py
-│   ├── prepare_data.py               # 데이터 목록·CSV 등을 로컬에 생성
-│   └── analyze.py                    # 필요한 경우에만 사용
-├── tests/                            # 코드 동작·작은 합성 입력 검증
-└── docs/                             # 데이터 준비·외부 코드 출처 등 최소 문서
+│   ├── prepare_data.py               # Generate manifests and CSV files locally
+│   └── analyze.py                    # Include only when needed
+├── tests/                            # Behavior checks using small synthetic inputs
+└── docs/                             # Minimal data preparation and dependency documentation
 ```
 
-### 파일 배치 기준
+### File Placement Rules
 
-| 기존 파일의 역할 | 목표 위치 | 정리 기준 |
+| Existing role | Target location | Migration rule |
 | --- | --- | --- |
-| arch/ 아래 모델 구현 | src/<package_name>/models/ | 모듈 import와 리소스 경로를 함께 수정 |
-| utils/datasets.py, 전처리·loader | src/<package_name>/data/ | 데이터 파일 자체와 분리 |
-| utils/csv_generator/ | src/<package_name>/data/ + scripts/prepare_data.py | 생성 코드는 포함, 생성된 CSV는 제외 |
-| train*.py의 학습 로직 | src/<package_name>/engine/ | 실행 인자 처리는 scripts로 분리 |
-| test*.py의 모델 평가 로직 | src/<package_name>/engine/ + scripts/evaluate.py | 단위 테스트인 tests/와 구분 |
-| 시각화·특징 분석 로직 | src/<package_name>/analysis/ | 생성 코드만 포함, 그림·분석 결과는 제외 |
-| 반복 실행용 shell | scripts/ | 프로젝트 루트를 계산하고 인자를 전달 |
-| 고정 SRM 커널 등 필수 리소스 | src/<package_name>/resources/ | 패키지 설치 시 포함하고 위치 독립적으로 로딩 |
-| 원본 데이터·CSV·가중치·로그·결과 | Git 제외 경로 또는 외부 경로 | 기존 로컬 자료 보존 |
-| 원고·리뷰·답변서·그림 | Git 제외 경로 | 코드 저장소에 포함하지 않음 |
+| Model implementations under `arch/` | `src/<package_name>/models/` | Update imports and resource paths together |
+| `utils/datasets.py`, preprocessing, loaders | `src/<package_name>/data/` | Keep processing code separate from data files |
+| `utils/csv_generator/` | `src/<package_name>/data/` + `scripts/prepare_data.py` | Include generation code; exclude generated CSV files |
+| Training logic in `train*.py` | `src/<package_name>/engine/` | Keep execution argument handling in scripts |
+| Model evaluation logic in `test*.py` | `src/<package_name>/engine/` + `scripts/evaluate.py` | Distinguish evaluation from unit tests in `tests/` |
+| Visualization and feature analysis logic | `src/<package_name>/analysis/` | Include generation code; exclude figures and analysis outputs |
+| Shell scripts for repeated runs | `scripts/` | Resolve the project root and forward arguments |
+| Required resources such as static SRM kernels | `src/<package_name>/resources/` | Include in package installation and load independently of the working directory |
+| Datasets, CSV files, weights, logs, results | Git-ignored or external paths | Preserve existing local artifacts |
+| Manuscripts, reviews, responses, figures | Git-ignored paths | Keep out of code repositories |
 
-이동할 때 알고리즘, 기본 학습 조건, 데이터 분할, 전처리 순서와 checkpoint 호환성을 임의로 바꾸지 않는다.
-필요하면 기존 train.py/test.py를 새 진입점으로 연결하는 얇은 호환 파일로 잠시 남긴다.
-기존 실험 버전은 번호만 보고 최종 모델로 선택하거나 삭제하지 않는다.
-README에는 지원하는 모델과 설정의 대응 관계를 기록한다.
+Do not change algorithms, default training conditions, data splits, preprocessing order, or checkpoint compatibility arbitrarily during migration.
+When needed, temporarily retain thin compatibility wrappers for existing train.py/test.py commands.
+Do not choose or delete experimental versions based only on their version numbers.
+Document the mapping between supported models and configurations in the README.
 
-웹·앱은 프레임워크의 app/, public/ 등 표준 구조를 따른다.
-연구용 engine/ 등을 모든 프로젝트에 강제하지 않으며, 실행 코드·공유 설정·개인 값·산출물의 구분 원칙을 공통 적용한다.
+Web projects and apps should follow their framework's standard layout, such as app/ or public/.
+Do not force research-specific directories such as engine/ onto every project. Apply the same separation of executable code, shared configuration, personal values, and generated artifacts.
 
-## 3. GitHub에 올리는 범위
+## 3. What to Upload to GitHub
 
-| 포함 | 제외 |
+| Include | Exclude |
 | --- | --- |
-| 학습·평가·추론·전처리·분석 소스 | 원본·가공 데이터 |
-| 실행 스크립트와 데이터 목록 생성 코드 | CSV 파일 및 csv/ 폴더 |
-| 공유 YAML/JSON 설정과 개인 설정 예제 | figures/ 및 생성된 그림·그래프 |
-| 의존성·패키지·필요한 잠금 파일 | pretrained·학습 checkpoint·ensemble 가중치 |
-| 실행에 필수인 작은 고정 커널·리소스 | results/·outputs/·reports/·실험 기록 산출물 |
-| 합성 입력 중심의 테스트 | W&B·TensorBoard·실행 로그·캐시 |
-| README와 필요한 최소 운영 문서 | 논문 원고·리뷰·답변서·발표자료 |
-| 외부 코드에 필요한 라이선스·저작권·인용 정보 | 개인 설정·토큰·설치된 도구·환경 바이너리 |
+| Training, evaluation, inference, preprocessing, and analysis source code | Raw and processed datasets |
+| Execution scripts and manifest generation code | CSV files and csv/ directories |
+| Shared YAML/JSON configuration and local configuration templates | figures/ and generated plots or images |
+| Dependencies, package configuration, and required lock files | Pretrained weights, training checkpoints, ensemble weights |
+| Small static kernels and resources required for execution | results/, outputs/, reports/, experiment record artifacts |
+| Tests primarily using synthetic inputs | W&B, TensorBoard, execution logs, caches |
+| README and minimal operational documentation | Manuscripts, reviews, response letters, presentation materials |
+| Required third-party licenses, copyright notices, and citation information | Personal configuration, tokens, installed tools, environment binaries |
 
-- 작은 CSV와 최종 그림도 이번 업로드 정책에서는 제외한다.
-- 실행에 CSV가 필요하면 스키마·데이터 준비 방법·생성 명령·분할 기준·seed를 문서화한다.
-- 기존 CSV가 유일한 split 원본이면 먼저 로컬에 보존한다. 동일 split을 복원할 수 없는 상태를 재현 가능하다고 쓰지 않는다.
-- 공개되지 않은 데이터나 checkpoint는 실제 준비 방법과 접근 조건을 설명한다. 코드만 clone해 모든 자료가 생긴다고 가정하지 않는다.
-- .npy, .json, .yaml 등은 확장자만으로 일괄 제외하지 않는다. 고정 커널과 공유 설정은 실행에 필요할 수 있다.
-- 그림을 생성하는 Python 코드는 포함할 수 있지만, 생성된 이미지·특징 배열·지표 파일은 산출물 경로로 보낸다.
-- 노트북은 실행에 필요한 로직을 모듈·스크립트로 옮긴다. 탐색 노트와 출력이 들어 있는 노트북은 기본 업로드 대상에서 제외한다.
-- 제외는 Git 관리 범위를 뜻한다. 로컬 원본을 지우거나 실험 결과를 덮어쓰지 않는다.
+- Exclude even small CSV files and final figures under this upload policy.
+- When execution requires CSV files, document their schema, data preparation steps, generation commands, split rules, and seeds.
+- If an existing CSV file is the only source of a split, preserve it locally first. Do not claim reproducibility if the same split cannot be reconstructed.
+- Explain the actual preparation steps and access conditions for non-public data or checkpoints. Cloning the code does not provide every required resource.
+- Do not exclude .npy, .json, or .yaml files solely by extension. Static kernels and shared configuration may be required for execution.
+- Python code that generates figures may be included, but generated images, feature arrays, and metric files must go to artifact directories.
+- Move execution logic from notebooks into modules and scripts. Exploratory notebooks and notebooks containing outputs are excluded by default.
+- Exclusion defines what Git tracks. Do not delete local originals or overwrite experiment results.
 
-## 4. 공통 .gitignore 양식
+## 4. Common .gitignore Template
 
-아래는 연구·ML 저장소에 적용할 기본 양식이다. 경로는 .gitignore 위치를 기준으로 해석된다.
-루트에 두고, 프로젝트별로 추가 생성 경로를 확인한다.
+Use the following baseline for research and ML repositories. Patterns are interpreted relative to the location of .gitignore.
+Place it at the repository root and check for additional project-specific output paths.
 
 ```gitignore
 # Machine-specific configuration / credentials
@@ -198,18 +198,18 @@ logs
 *.log
 ```
 
-- csv, figures, ckpt처럼 끝 /가 없는 단일 이름 규칙은 같은 이름의 디렉터리·파일·심볼릭 링크를 대상으로 한다.
-- /results는 저장소 루트만 대상으로 한다. 다른 위치에도 결과가 생성되면 해당 경로를 추가한다.
-- src/<package_name>/data/의 데이터 처리 코드는 루트에 한정한 /data 규칙으로 제외되지 않는다.
-- scripts/와 모델 구현이 있는 models/ 전체를 제외하지 않는다.
-- 확장자가 없는 checkpoint도 있으므로 저장 디렉터리 규칙과 실제 stage 내용을 확인한다.
-- .gitignore는 이미 추적 중인 파일의 추적을 해제하지 않는다. 필요하면 대상 경로에만 git rm --cached를 적용하고 로컬 파일과 diff를 확인한다.
-- Git LFS로 이번 산출물 제외 정책을 우회하지 않는다. 자료 배포가 필요해지면 별도로 방식을 정한다.
+- Single-name patterns without a trailing /, such as csv, figures, and ckpt, match directories, files, and symbolic links with that name.
+- /results applies only at the repository root. Add explicit paths if results are generated elsewhere.
+- The root-only /data rule does not exclude data processing code under src/<package_name>/data/.
+- Do not exclude entire scripts/ directories or models/ directories containing model implementations.
+- Some checkpoints have no extension. Check both the output directory rules and the actual staged files.
+- .gitignore does not untrack files that Git already tracks. When necessary, apply git rm --cached only to the relevant paths, and verify the local files and diff.
+- Do not use Git LFS to bypass this artifact exclusion policy. Choose a separate distribution approach if resource publication becomes necessary.
 
-## 5. 서버 경로와 실행 설정
+## 5. Machine Paths and Execution Configuration
 
-공유 코드에 특정 서버의 절대경로·GPU 번호·개인 W&B entity를 고정하지 않는다.
-공유 기본 설정에는 개인 경로를 넣지 않고 local.example.yaml로 필요한 키를 안내한다.
+Do not hardcode machine-specific absolute paths, GPU indices, or personal W&B entities in shared code.
+Keep personal paths out of shared defaults and list the required keys in local.example.yaml.
 
 ```yaml
 # configs/local.example.yaml
@@ -224,64 +224,64 @@ tracking:
   entity: null
 ```
 
-- 실제 값은 Git에서 제외되는 configs/local.yaml에 작성한다.
-- 예제 YAML을 복사하는 것만으로 자동 로딩되지 않는다. 진입점이 읽도록 구현한다.
-- 설정 우선순위는 명령행 인자 → 개인 설정 → 공유 기본값으로 통일한다.
-- 명령행으로 지정한 실험 설정 파일을 먼저 선택하고, 그 공유 설정 위에 개인 값과 명시적 인자를 적용한다.
-- 저장소 내부의 상대경로는 프로젝트 루트를 기준으로 처리한다.
-- CSV에는 가능한 한 데이터 루트 기준 상대경로를 사용하고, 로더가 data_root와 결합한다.
-- 모델 커널 등 패키지 리소스는 패키지 기준으로 찾는다.
-- ../../data/ 또는 현재 작업 디렉터리가 우연히 맞아야만 실행되는 구조를 없앤다.
-- W&B 등 외부 기록은 선택 사용으로 하고, 비활성 상태에서도 학습·평가가 가능하게 한다.
-- 원시 결과는 제외 경로에 저장한다. 실행 기록에는 공개 가능한 설정·seed·데이터 버전·commit·환경을 로컬에 남긴다.
+- Put actual values in configs/local.yaml, which is excluded from Git.
+- Copying an example YAML file does not load it automatically. Implement loading in the entry point.
+- Use the same precedence everywhere: command-line arguments → local configuration → shared defaults.
+- First select the experiment configuration file specified on the command line, then apply local values and explicit arguments over that shared configuration.
+- Resolve repository-internal relative paths from the project root.
+- Where possible, store paths in CSV files relative to the dataset root and let loaders combine them with data_root.
+- Resolve package resources, such as model kernels, relative to the package.
+- Remove dependencies on ../../data/ or an accidentally correct current working directory.
+- Make external tracking, such as W&B, optional. Training and evaluation must also work with tracking disabled.
+- Save raw results to excluded paths. Keep public-safe configuration, seeds, data versions, commits, and environment details in local run records.
 
-## 6. 기존 연구 구조를 바꾸는 순서
+## 6. Migrating Existing Research Projects
 
-1. 프로젝트의 AGENTS.md, README, Git 루트·브랜치·원격 주소·기존 변경을 확인한다.
-2. 코드·설정·커널·외부 코드·데이터·CSV·가중치·결과를 구분한다.
-3. 현재 경로 → 목표 경로 → import·실행 명령·리소스 경로의 대응표를 만든다.
-4. 데이터와 실험 자료를 보존한 상태에서 코드와 설정부터 정리한다.
-5. 패키지 설치와 scripts 진입점을 구성하고 내부 import·리소스 참조를 갱신한다.
-6. 개인 경로 설정과 CSV 생성·외부 자료 준비 절차를 연결한다.
-7. .gitignore를 적용하고, 제외 경로 안에 실행 코드가 숨어 있지 않은지 확인한다.
-8. 기존 검증과 작은 입력 실행으로 이동 전후 동작을 비교한다.
-9. 필요한 코드·설정·문서만 명시적으로 stage하고 diff를 검토한다.
-10. 프로젝트별 commit·push 후 원격 파일 목록과 최소 실행을 확인한다.
+1. Read the project's AGENTS.md and README. Check the Git root, branch, remote URL, and existing changes.
+2. Classify code, configuration, kernels, external code, datasets, CSV files, weights, and results.
+3. Map current paths to target paths and identify affected imports, execution commands, and resource references.
+4. Preserve datasets and experiment artifacts while reorganizing code and configuration first.
+5. Configure package installation and scripts entry points, then update internal imports and resource references.
+6. Connect local path configuration, CSV generation, and external resource preparation.
+7. Apply .gitignore and check that required executable code is not hidden inside excluded directories.
+8. Compare behavior before and after migration using existing checks and small inputs.
+9. Explicitly stage only the required code, configuration, and documentation, then review the diff.
+10. Commit and push each project separately, then verify remote contents and minimal execution.
 
-### 로컬 상위 폴더 이름 변경
+### Renaming a Local Parent Directory
 
-paper/에서 research/처럼 상위 경로를 바꾸는 작업은 개별 저장소 코드 정리와 구분한다.
-다른 연구, 열린 셸, Docker bind mount, 실행 중인 작업, IDE·도구 설정의 경로 의존성을 먼저 확인한다.
-필요하면 기존 경로에 한시적인 호환 심볼릭 링크를 유지하고, 의존성이 해소된 뒤 제거한다.
-실행 중인 실험을 임의로 중단하거나 컨테이너를 재시작하지 않는다.
-다른 연구의 내부 코드를 함께 일괄 수정하지 않는다.
+Treat a parent path change, such as paper/ → research/, separately from reorganizing an individual repository.
+First inspect path dependencies in other studies, open shells, Docker bind mounts, running tasks, and IDE or tool configuration.
+When needed, temporarily retain a compatibility symbolic link at the old path and remove it after dependencies have been resolved.
+Do not stop running experiments or restart containers without authorization.
+Do not make bulk changes to other studies' internal code.
 
-### 우선 적용할 두 연구
+### First Two Research Projects
 
-| 연구 | 저장소 이름 제안 | 정리할 핵심 |
+| Study | Proposed repository name | Main migration scope |
 | --- | --- | --- |
-| IDA | ida-steganalysis | IDA·attention·baseline 모델, 학습·평가·시각화·감사 코드, 기존 수치 검증 |
-| JPEG-aware Steganalysis | jpeg-aware-steganalysis | 모델별 학습·평가, JPEG·DCT·ROI 처리, 변환 설정, 데이터 목록 생성 |
+| IDA | ida-steganalysis | IDA, attention modules, baselines, training, evaluation, visualization, audit code, existing numerical checks |
+| JPEG-aware Steganalysis | jpeg-aware-steganalysis | Model-specific training and evaluation, JPEG/DCT/ROI processing, transform configuration, manifest generation |
 
-IDA는 기존 수치 검증과 외부 이미지 의존 검증을 구분한다.
-JPEG-aware는 일반·SF3Net·Two-stream 실행 경로와 모델·변환 설정 대응을 기록한다.
-여러 실험 버전은 출처와 용도를 보존하고 논문에 대응하는 기준 버전을 확인한다.
-SRM 커널 같은 필수 고정 리소스는 포함하고, 모델 폴더 안의 checkpoint와 도구 바이너리는 제외한다.
-논문 원고·리뷰·답변서와 CSV·figures·기존 전체 결과는 로컬에 보존한다.
+For IDA, distinguish existing numerical checks from checks requiring external images.
+For JPEG-aware, document the standard, SF3Net, and Two-stream execution paths and their model/transform configurations.
+Preserve the origin and purpose of experimental versions, and identify the reference version corresponding to the paper.
+Include required static resources such as SRM kernels; exclude checkpoints inside model directories and installed tool binaries.
+Preserve manuscripts, reviews, response letters, CSV files, figures, and all existing results locally.
 
-## 7. 검증과 GitHub 업로드
+## 7. Verification and GitHub Upload
 
-검증한 환경에서 다음을 확인한다. 데이터·GPU·가중치가 필요한 검증은 조건과 수행 범위를 구분한다.
+Check the following in the verified environment. State the conditions and completed scope for checks requiring datasets, GPUs, or weights.
 
-- 패키지 설치, 소스 문법·import, scripts의 인자·설정 로딩
-- 기존 테스트와 합성 입력을 이용한 최소 실행
-- 필요한 고정 리소스가 설치 후에도 로딩되는지
-- 준비된 데이터의 작은 batch로 데이터 로더·모델 forward가 동작하는지
-- 기존 checkpoint가 있는 경우 로딩 호환성과 필요한 평가 경로
-- CSV·figures·데이터·가중치·산출물·개인 설정이 stage에 포함되지 않았는지
-- 새 clone에서 문서대로 설치·자료 준비·최소 실행할 수 있는지
+- Package installation, source syntax and imports, script arguments, and configuration loading
+- Existing tests and minimal execution with synthetic inputs
+- Loading required static resources after installation
+- Data loader and model forward execution with a small batch of prepared data
+- Checkpoint loading compatibility and relevant evaluation paths when existing checkpoints are available
+- Absence of CSV files, figures, datasets, weights, artifacts, and personal configuration from staged files
+- Installation, resource preparation, and minimal execution from a fresh clone using the documentation
 
-아래 명령은 점검용이다. 실제 stage 경로와 테스트 명령은 프로젝트에 맞춰 명시한다.
+The commands below are for inspection. Specify actual staging paths and test commands for each project.
 
 ```bash
 git rev-parse --show-toplevel
@@ -294,45 +294,46 @@ git diff --cached --stat
 git diff --cached --check
 ```
 
-- 처음 업로드하는 연구는 각 연구 폴더에 별도 저장소를 초기화한다. research/ 전체를 git init하지 않는다.
-- 기존 Git 이력과 외부 저장소 이력이 있다면 확인해 보존한다.
-- 공개 범위는 업로드 요청과 프로젝트 조건에 맞춘다. 새 연구 저장소는 별도 공개 지시가 없으면 private을 기본안으로 한다.
-- 대용량 폴더를 포함한 채 git add .로 시작하지 않는다.
-- .gitignore와 함께 실제 stage 목록을 확인한다. 민감한 개인 값이 없는지도 diff에서 확인한다.
-- commit은 목적별로 나누고, push 후 원격 branch와 commit을 조회한다.
-- 문서 작성·코드 이동·검증·commit·push의 완료 여부를 구분해 보고한다.
-- 수행하지 못한 GPU·전체 학습·최종 성능 재현 검증을 완료했다고 쓰지 않는다.
+- For a first upload, initialize a separate repository inside each research project. Do not run git init over the entire research/ directory.
+- Inspect and preserve existing Git history and upstream repository history.
+- Set visibility according to the upload request and project conditions. Default new research repository proposals to private unless public access is explicitly requested.
+- Do not start with git add . while large artifact directories are present.
+- Inspect the actual staged files alongside .gitignore. Check the diff for sensitive personal values.
+- Group commits by purpose and verify the remote branch and commit after pushing.
+- Report document creation, code migration, verification, commit, and push as distinct completion states.
+- Do not report GPU checks, full training, or final performance reproduction as completed when they were not performed.
 
-## 8. 대회 코드와 장기 유지
+## 8. Competition Code and Long-Term Maintenance
 
-대회·ML 프로젝트도 같은 소스 구조를 사용하고 필요한 경우 scripts/submit.py를 추가한다.
-제출 파일은 outputs/ 또는 submissions/에 생성하고 해당 경로를 .gitignore에 추가한다.
-데이터 split·모델·설정·commit·제출 점수의 연결은 로컬 기록에 남긴다.
-제출 CSV·전체 리더보드 기록·최종 그림을 코드 저장소에 함께 올리지 않는다.
-최종 제출·논문 제출·기준 릴리스는 확인한 commit에 태그로 고정한다.
+Use the same source layout for competition and ML projects, adding scripts/submit.py when needed.
+Generate submission files under outputs/ or submissions/ and add the corresponding path to .gitignore.
+Keep local records linking data splits, models, configuration, commits, and submission scores.
+Do not upload submission CSV files, full leaderboard records, or final figures with the code.
+Tag verified commits for final competition submissions, paper submissions, and reference releases.
 
-- 새 코드는 기존 역할의 하위 폴더에 추가한다.
-- 새 산출물 경로가 생기면 .gitignore와 실행 설정을 함께 갱신한다.
-- 새로운 필수 리소스는 필요성·크기·출처를 확인하고 개별 포함한다.
-- 공통 양식이 바뀌면 이 가이드 버전과 변경 이유를 기록한다.
-- 템플릿 변경은 기존 저장소에 자동 전파되지 않는다. 필요한 변경만 검토해 적용한다.
-- 프로젝트 AGENTS.md에는 이 가이드 링크·적용 버전과 프로젝트별 검증 명령을 기록한다.
-- 프로젝트 README에는 지원 상태·실행 명령·외부 자료 준비 방법을 유지한다.
-- 실행·패키지 구조를 바꾸면 관련 검증을 수행하고, 프로젝트의 추가 완료 지침도 따른다.
+- Add new code under the existing directory corresponding to its role.
+- Update .gitignore and execution configuration whenever a new output path is introduced.
+- Review the need, size, and source of each new required resource before including it.
+- Record the guide version and reason whenever the shared layout changes.
+- Template changes do not propagate automatically to existing repositories. Review and apply only the relevant updates.
+- In each project's AGENTS.md, record the guide link, applied version, and project-specific verification commands.
+- Maintain supported status, execution commands, and external resource preparation steps in the project README.
+- Run relevant checks after execution or package layout changes, and follow any additional project completion instructions.
 
-## 9. 문서 관리
+## 9. Document Maintenance
 
-이 공개 가이드의 원본은 프로필 저장소의 WORKFLOW_GUIDE.md다.
-프로필 README에는 이 파일로 연결되는 링크를 둔다.
-개별 연구에는 공통 가이드 사본을 계속 복제하지 않고, 적용 버전과 프로젝트별 추가 사항을 기록한다.
-개인 Notion의 다른 관리 문서는 별도 목적의 문서로 유지하며 이 업로드 작업에서 자동 변경하지 않는다.
+The source of truth for this public guide is WORKFLOW_GUIDE.md in the profile repository.
+Link to this file from the profile README.
+Do not repeatedly copy the shared guide into individual research projects. Record the applied version and project-specific additions instead.
+Other management documents in personal Notion serve separate purposes and are not automatically modified by this upload.
 
-## 공식 참고 자료
+## Official References
 
-- [Git ignore 규칙과 추적 중인 파일](https://git-scm.com/docs/gitignore)
-- [GitHub 프로필 README](https://docs.github.com/en/account-and-profile/how-tos/profile-customization/managing-your-profile-readme)
-- [Python 패키지의 src 구조](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/)
+- [Git ignore rules and tracked files](https://git-scm.com/docs/gitignore)
+- [GitHub profile README](https://docs.github.com/en/account-and-profile/how-tos/profile-customization/managing-your-profile-readme)
+- [Python package src layout](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/)
 
-## 변경 기록
+## Changelog
 
-- 2026-11-04 · v1.0: 프로젝트별 저장소, 연구·대회 공통 소스 구조, 코드 중심 업로드, CSV·figures 제외, 기존 연구 이관·검증 절차 정의.
+- 2026-11-04 · v1.0: Defined project-specific repositories, a common research and competition source layout, code-focused uploads, CSV/figures exclusions, and migration and verification procedures.
+- 2026-11-04 · v1.1: Translated the guide into English while preserving its structure, upload policy, and configuration examples.
