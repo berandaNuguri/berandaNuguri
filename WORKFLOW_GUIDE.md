@@ -4,7 +4,7 @@
 > Keep CSV files, figures, datasets, trained weights, experiment results, manuscripts, and logs locally or in separate storage.
 
 - Created / updated: 2026-11-04 (Asia/Seoul)
-- Version: 1.1
+- Version: 1.2
 - Scope: Repository organization, research and competition code structure, uploads, and maintenance for personal GitHub projects.
 - This document defines how to reorganize projects. Publishing it does not move local directories or upload research code automatically.
 
@@ -16,8 +16,7 @@ For research, use one repository per paper or independent study by default. For 
 ```text
 local-workspace/                      # This parent is not a Git repository
 ├── research/
-│   ├── ida-steganalysis/             # Independent Git repository
-│   └── jpeg-aware-steganalysis/      # Independent Git repository
+│   └── <research-slug>/              # Independent Git repository
 ├── competitions/
 │   └── <competition-slug>/           # Independent Git repository
 ├── apps/
@@ -30,8 +29,7 @@ local-workspace/                      # This parent is not a Git repository
 
 ```text
 github-account/                       # Each item below is a separate repository
-├── ida-steganalysis
-├── jpeg-aware-steganalysis
+├── <research-slug>
 ├── <competition-slug>
 ├── <app-slug>
 ├── <tool-slug>
@@ -65,7 +63,7 @@ Do not create unused empty directories. The commands and filenames below describ
 │   ├── experiments/                  # Experiment conditions, model selection, seeds
 │   └── transforms/                   # Preprocessing and augmentation configuration, when needed
 ├── src/
-│   └── <package_name>/               # Example: ida_steganalysis
+│   └── <package_name>/               # Importable Python package (snake_case)
 │       ├── __init__.py
 │       ├── models/                   # Models, attention modules, baselines
 │       ├── data/                     # Datasets, loaders, preprocessing, CSV generation logic
@@ -256,9 +254,12 @@ When needed, temporarily retain a compatibility symbolic link at the old path an
 Do not stop running experiments or restart containers without authorization.
 Do not make bulk changes to other studies' internal code.
 
-### First Two Research Projects
+### Examples: Research Project Migrations
 
-| Study | Proposed repository name | Main migration scope |
+The following projects illustrate how to apply the common layout. Their names are examples, not required directory names or a fixed migration priority.
+For example, a repository named `ida-steganalysis` can use `ida_steganalysis` as its Python package name.
+
+| Example study | Example repository name | Main migration scope |
 | --- | --- | --- |
 | IDA | ida-steganalysis | IDA, attention modules, baselines, training, evaluation, visualization, audit code, existing numerical checks |
 | JPEG-aware Steganalysis | jpeg-aware-steganalysis | Model-specific training and evaluation, JPEG/DCT/ROI processing, transform configuration, manifest generation |
@@ -337,3 +338,4 @@ Other management documents in personal Notion serve separate purposes and are no
 
 - 2026-11-04 · v1.0: Defined project-specific repositories, a common research and competition source layout, code-focused uploads, CSV/figures exclusions, and migration and verification procedures.
 - 2026-11-04 · v1.1: Translated the guide into English while preserving its structure, upload policy, and configuration examples.
+- 2026-11-04 · v1.2: Generalized repository and package placeholders in the standard layouts; kept concrete research names in a clearly labeled examples section.
