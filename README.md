@@ -1,5 +1,9 @@
 ![berandaNuguri_README_banner](https://user-images.githubusercontent.com/115712125/201857181-9f63a836-febe-48f2-8c6a-43458f2c6a62.png)
 
+## Repository Workflow
+
+[WORKFLOW_GUIDE.md — 프로젝트 구조 및 코드 업로드 기준](https://github.com/berandaNuguri/berandaNuguri/blob/main/WORKFLOW_GUIDE.md)
+
 # Profile
 > Hanbat National University 
 > </br>Computer Engineering 4th year
