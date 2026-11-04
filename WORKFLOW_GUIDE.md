@@ -4,7 +4,7 @@
 > Keep CSV files, figures, datasets, trained weights, experiment results, manuscripts, and logs locally or in separate storage.
 
 - Created / updated: 2026-11-04 (Asia/Seoul)
-- Version: 1.4
+- Version: 1.5
 - Scope: Repository organization, research and competition code structure, uploads, and maintenance for personal GitHub projects.
 - This document defines how to reorganize projects. Publishing it does not move local directories or upload research code automatically.
 
@@ -139,6 +139,7 @@ Do not force research-specific directories such as engine/ onto every project. A
 - Python code that generates figures may be included, but generated images, feature arrays, and metric files must go to artifact directories.
 - Move execution logic from notebooks into modules and scripts. Exploratory notebooks and notebooks containing outputs are excluded by default.
 - Exclusion defines what Git tracks. Do not delete local originals or overwrite experiment results.
+- Never upload W&B run directories, local account settings, metadata/summary/history files or binary `*.wandb` logs. Keep API keys and login credentials in private environment settings outside the repository. Required optional tracking integration source may remain in the code.
 
 ## 4. Common .gitignore Template
 
@@ -204,8 +205,16 @@ checkpoint_384
 *.safetensors
 *.onnx
 
-# Experiment logs
+# Experiment logs and W&B local account/run artifacts
 wandb
+wandb/
+.wandb/
+*.wandb
+wandb-metadata.json
+wandb-summary.json
+wandb-history.jsonl
+wandb-events.jsonl
+.netrc
 runs
 lightning_logs
 logs
@@ -365,6 +374,8 @@ Other management documents in personal Notion serve separate purposes and are no
 - [Python package src layout](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/)
 
 ## Changelog
+
+- 2026-11-04 · v1.5: Explicitly excluded W&B run/account artifacts, metadata/summary/history files, binary logs and local credential files; kept authentication outside tracked code.
 
 - 2026-11-04 · v1.4: Defined paper-focused research READMEs, primary-source publication verification, separate operational/migration documentation, and concise Work In Progress introductions.
 
