@@ -4,7 +4,7 @@
 > Keep CSV files, figures, datasets, trained weights, experiment results, manuscripts, and logs locally or in separate storage.
 
 - Created / updated: 2026-11-04 (Asia/Seoul)
-- Version: 1.2
+- Version: 1.3
 - Scope: Repository organization, research and competition code structure, uploads, and maintenance for personal GitHub projects.
 - This document defines how to reorganize projects. Publishing it does not move local directories or upload research code automatically.
 
@@ -49,6 +49,7 @@ github-account/                       # Each item below is a separate repository
 
 Use the following roles and paths as the common structure for new studies and research projects being reorganized.
 Do not create unused empty directories. The commands and filenames below describe the target layout; update the implementation and README together.
+In this guide, `src/data/` means a repository-local directory for actual datasets, not a Python module for dataset preparation or loading. It sits beside the importable package directory and is excluded from Git.
 
 ```text
 <repository>/
@@ -63,18 +64,18 @@ Do not create unused empty directories. The commands and filenames below describ
 │   ├── experiments/                  # Experiment conditions, model selection, seeds
 │   └── transforms/                   # Preprocessing and augmentation configuration, when needed
 ├── src/
+│   ├── data/                         # Actual local datasets/manifests; Git-ignored
 │   └── <package_name>/               # Importable Python package (snake_case)
 │       ├── __init__.py
-│       ├── models/                   # Models, attention modules, baselines
-│       ├── data/                     # Datasets, loaders, preprocessing, CSV generation logic
-│       ├── engine/                   # Training, evaluation, inference logic
-│       ├── analysis/                 # Required analysis and visualization generation code
-│       ├── utils/                    # Shared helpers
+│       ├── models/                   # Model and algorithm implementations
+│       ├── utils/                    # Shared helpers, loaders and data processing functions
+│       ├── engine/                   # Optional shared execution logic; create only when useful
+│       ├── analysis/                 # Optional analysis/visualization code, when in scope
 │       └── resources/                # Small static kernels and other required resources
 ├── scripts/
-│   ├── train.py                      # Thin execution entry point
-│   ├── evaluate.py
-│   ├── prepare_data.py               # Generate manifests and CSV files locally
+│   ├── train.py                      # Training CLI and execution workflow
+│   ├── evaluate.py                   # Evaluation CLI and execution workflow
+│   ├── prepare_data.py               # Run preparation helpers; generate local manifests
 │   └── analyze.py                    # Include only when needed
 ├── tests/                            # Behavior checks using small synthetic inputs
 └── docs/                             # Minimal data preparation and dependency documentation
@@ -85,15 +86,28 @@ Do not create unused empty directories. The commands and filenames below describ
 | Existing role | Target location | Migration rule |
 | --- | --- | --- |
 | Model implementations under `arch/` | `src/<package_name>/models/` | Update imports and resource paths together |
-| `utils/datasets.py`, preprocessing, loaders | `src/<package_name>/data/` | Keep processing code separate from data files |
-| `utils/csv_generator/` | `src/<package_name>/data/` + `scripts/prepare_data.py` | Include generation code; exclude generated CSV files |
-| Training logic in `train*.py` | `src/<package_name>/engine/` | Keep execution argument handling in scripts |
-| Model evaluation logic in `test*.py` | `src/<package_name>/engine/` + `scripts/evaluate.py` | Distinguish evaluation from unit tests in `tests/` |
+| `utils/datasets.py`, preprocessing, loaders | `src/<package_name>/utils/`, optionally grouped into modules such as `utils/data_processing/` | Keep Python processing functions outside actual dataset storage |
+| `utils/csv_generator/` | `src/<package_name>/utils/` + `scripts/prepare_data.py` | Include generation functions; write CSV files to ignored local data/artifact paths |
+| Training logic in `train*.py` | `scripts/train.py`; shared components may live in `src/<package_name>/engine/` | Keep a direct task workflow; do not require a thin wrapper around a single-use engine module |
+| Model evaluation logic in `test*.py` | `scripts/evaluate.py`; reusable components may live in `src/<package_name>/engine/` or `utils/` | Distinguish model evaluation from unit tests in `tests/` |
 | Visualization and feature analysis logic | `src/<package_name>/analysis/` | Include generation code; exclude figures and analysis outputs |
 | Shell scripts for repeated runs | `scripts/` | Resolve the project root and forward arguments |
 | Required resources such as static SRM kernels | `src/<package_name>/resources/` | Include in package installation and load independently of the working directory |
-| Datasets, CSV files, weights, logs, results | Git-ignored or external paths | Preserve existing local artifacts |
+| Actual raw/processed datasets and generated manifests | `src/data/` or explicitly configured external storage | Exclude from Git; do not put preparation/loading code here |
+| Weights, logs, results | Git-ignored or external paths | Preserve existing local artifacts |
 | Manuscripts, reviews, responses, figures | Git-ignored paths | Keep out of code repositories |
+
+### Execution and Data Responsibilities
+
+- Keep actual raw/processed datasets and generated manifests under the ignored `src/data/` directory or configured external storage. Create it only when data is needed; do not upload data to create an otherwise empty directory.
+- Put reusable loading, preprocessing, split and manifest-generation functions under `src/<package_name>/utils/`. Group them into focused modules or a `utils/data_processing/` subpackage when useful.
+- Put task argument handling and the actual preparation/training/evaluation workflow in `scripts/`. These scripts may contain execution logic; they are not required to be thin wrappers.
+- Use task-oriented names in `scripts/`, such as `embed_message.py`, `extract_message.py`, `generate_cover.py`, `train_steganalyzer.py`, `evaluate_text.py` and `prepare_prompts.py`, when they better describe a project's operations. These are examples, not mandatory filenames.
+- Select algorithms through a flag such as `--method` when they share an operation. Keep `--language_model` or the model configuration separate from algorithm selection, and preserve each implementation's defaults.
+- Add `engine/` only for execution components reused across multiple tasks or when its separation meaningfully simplifies a large workflow. A batch runner and an extra delegation layer between `scripts/` and `engine/` are optional.
+- Keep model/algorithm implementations under `models/` and reusable helpers under `utils/`. Do not merge distinct algorithms or training protocols merely to reduce the number of entry points.
+- Keep `src/data/` outside the importable package: no `__init__.py`, processing modules or model implementations belong there. Restrict package discovery to `<package_name>` and its subpackages, and exclude actual datasets from source/wheel distributions as well as Git.
+- The guide does not automatically move existing projects' data/code or update their import paths. Migrate each requested project deliberately and preserve original local artifacts.
 
 Do not change algorithms, default training conditions, data splits, preprocessing order, or checkpoint compatibility arbitrarily during migration.
 When needed, temporarily retain thin compatibility wrappers for existing train.py/test.py commands.
@@ -117,6 +131,7 @@ Do not force research-specific directories such as engine/ onto every project. A
 | Required third-party licenses, copyright notices, and citation information | Personal configuration, tokens, installed tools, environment binaries |
 
 - Exclude even small CSV files and final figures under this upload policy.
+- A dataset remains excluded even when stored under `src/data/`; placing it inside `src/` does not make it source code. Keep loader/preparation functions in executable modules outside that storage directory.
 - When execution requires CSV files, document their schema, data preparation steps, generation commands, split rules, and seeds.
 - If an existing CSV file is the only source of a split, preserve it locally first. Do not claim reproducibility if the same split cannot be reconstructed.
 - Explain the actual preparation steps and access conditions for non-public data or checkpoints. Cloning the code does not provide every required resource.
@@ -152,7 +167,8 @@ build/
 dist/
 *.egg-info/
 
-# Dataset / generated manifests
+# Actual local datasets / generated manifests
+/src/data
 /data
 /datasets
 csv
@@ -198,7 +214,9 @@ logs
 
 - Single-name patterns without a trailing /, such as csv, figures, and ckpt, match directories, files, and symbolic links with that name.
 - /results applies only at the repository root. Add explicit paths if results are generated elsewhere.
-- The root-only /data rule does not exclude data processing code under src/<package_name>/data/.
+- /src/data excludes the actual dataset storage directory beside the Python package; /data and /datasets also cover legacy root-level storage.
+- /src/data does not exclude loading/preparation functions under src/<package_name>/utils/. Do not replace this with a blanket rule that hides required Python modules.
+- Existing repositories may still contain processing modules under src/<package_name>/data/. Move their code and update imports when that project's migration is requested; do not delete or ignore those modules blindly.
 - Do not exclude entire scripts/ directories or models/ directories containing model implementations.
 - Some checkpoints have no extension. Check both the output directory rules and the actual staged files.
 - .gitignore does not untrack files that Git already tracks. When necessary, apply git rm --cached only to the relevant paths, and verify the local files and diff.
@@ -212,8 +230,8 @@ Keep personal paths out of shared defaults and list the required keys in local.e
 ```yaml
 # configs/local.example.yaml
 paths:
-  data_root: /replace/with/dataset-root
-  manifest_root: /replace/with/local-csv-directory
+  data_root: src/data                      # Relative to the repository root; external storage is also allowed
+  manifest_root: src/data/manifests        # Generated local manifests; excluded from Git
   checkpoint_root: /replace/with/local-checkpoint-directory
   output_root: /replace/with/local-output-directory
 tracking:
@@ -240,7 +258,7 @@ tracking:
 3. Map current paths to target paths and identify affected imports, execution commands, and resource references.
 4. Preserve datasets and experiment artifacts while reorganizing code and configuration first.
 5. Configure package installation and scripts entry points, then update internal imports and resource references.
-6. Connect local path configuration, CSV generation, and external resource preparation.
+6. Place preparation/loading functions in utils/ or an appropriate shared execution module, connect local data paths such as src/data/, and document CSV generation and external resource preparation.
 7. Apply .gitignore and check that required executable code is not hidden inside excluded directories.
 8. Compare behavior before and after migration using existing checks and small inputs.
 9. Explicitly stage only the required code, configuration, and documentation, then review the diff.
@@ -335,6 +353,8 @@ Other management documents in personal Notion serve separate purposes and are no
 - [Python package src layout](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/)
 
 ## Changelog
+
+- 2026-11-04 · v1.3: Reserved src/data/ for ignored actual datasets; moved preparation/loading responsibilities to utils/ and task workflows; made engine/ and thin wrappers optional; aligned ignore rules, package exclusion guidance and path examples.
 
 - 2026-11-04 · v1.0: Defined project-specific repositories, a common research and competition source layout, code-focused uploads, CSV/figures exclusions, and migration and verification procedures.
 - 2026-11-04 · v1.1: Translated the guide into English while preserving its structure, upload policy, and configuration examples.
