@@ -4,7 +4,7 @@
 > Keep CSV files, figures, datasets, trained weights, experiment results, manuscripts, and logs locally or in separate storage.
 
 - Created / updated: 2026-11-04 (Asia/Seoul)
-- Version: 1.3
+- Version: 1.4
 - Scope: Repository organization, research and competition code structure, uploads, and maintenance for personal GitHub projects.
 - This document defines how to reorganize projects. Publishing it does not move local directories or upload research code automatically.
 
@@ -53,7 +53,7 @@ In this guide, `src/data/` means a repository-local directory for actual dataset
 
 ```text
 <repository>/
-├── README.md                         # Purpose, environment, setup, data preparation, execution, checks
+├── README.md                         # Research problem, paper, method; brief usage or documentation links
 ├── AGENTS.md                         # Project-specific work and verification instructions
 ├── .gitignore
 ├── pyproject.toml                    # Package, dependency, and installation configuration
@@ -341,6 +341,18 @@ Tag verified commits for final competition submissions, paper submissions, and r
 
 ## 9. Document Maintenance
 
+### Paper-Focused Research READMEs
+
+- Write the README for a reader who wants to understand the research. Lead with the study's problem, corresponding paper and main idea, rather than how files were copied, renamed or reorganized.
+- Find and read the corresponding paper before describing its contributions. Prefer the paper and its official publisher/author records; use available local PDF/LaTeX manuscripts when the public record is unavailable or to inspect method details.
+- Verify titles, authors, venue, year, DOI and publication status before including them. Folder labels, conference templates and anonymous draft headers do not establish acceptance or publication.
+- Summarize the task, method and supported experimental setting in original prose. Distinguish a protocol contribution from a model contribution, manuscript claims from verified code behavior, and reported results from runs actually reproduced in this checkout.
+- Include a verified paper/DOI link and citation metadata when available. Do not invent publication details or describe a repository as an official implementation without confirmation.
+- Keep brief usage/resource guidance when useful, linking to docs/ for detailed installation, data preparation and execution instructions. Keep structural migration history, file-copy records, agent workflow and verification logs in docs/ or AGENTS.md.
+- For a requested short Work In Progress README, use a WIP heading and only two or three short lines covering the research topic and planned work. Do not add unverified results, completed-method claims or a long code-layout history; keep operational details in docs/.
+- Reading a local manuscript as a reference does not authorize adding the manuscript, figures, datasets or unpublished supplementary material to GitHub. Apply the existing upload exclusions.
+
+
 The source of truth for this public guide is WORKFLOW_GUIDE.md in the profile repository.
 Link to this file from the profile README.
 Do not repeatedly copy the shared guide into individual research projects. Record the applied version and project-specific additions instead.
@@ -353,6 +365,8 @@ Other management documents in personal Notion serve separate purposes and are no
 - [Python package src layout](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/)
 
 ## Changelog
+
+- 2026-11-04 · v1.4: Defined paper-focused research READMEs, primary-source publication verification, separate operational/migration documentation, and concise Work In Progress introductions.
 
 - 2026-11-04 · v1.3: Reserved src/data/ for ignored actual datasets; moved preparation/loading responsibilities to utils/ and task workflows; made engine/ and thin wrappers optional; aligned ignore rules, package exclusion guidance and path examples.
 
