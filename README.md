@@ -18,68 +18,68 @@
 
 **Journal Papers**
 
-| Paper | Authors | Publication | Links |
-|:---|:---|:---|:---:|
-| **JPEG-aware steganalysis: explicit frequency modeling with dequantized DCT for real-world JPEG images** | <ins><strong>Dongsu Kim</strong></ins>, Jin-Cheol An,<br>Youngjoon Yoo, Tae-Woo Oh,<br>Haneol Jang | *Scientific Reports*<br>Vol. 16, Article 30309<br>Jul. 2026 | [Paper](https://doi.org/10.1038/s41598-026-59285-1)<br>[Code](https://github.com/berandaNuguri/jpeg-aware-steganalysis) |
-| **Image Distortion-Based Attention for JPEG Compressed-Domain Steganalysis** | <ins><strong>Dongsu Kim</strong></ins>, Seo-Yeon Oh,<br>Hae-Chul Choi, Tae-Woo Oh,<br>Haneol Jang | *Journal of Digital Forensics*<br>Vol. 19, No. 4, pp. 43–58<br>2025 | [Paper](https://doi.org/10.22798/KDFS.2025.19.4.43)<br>[Code](https://github.com/berandaNuguri/ida-steganalysis) |
-| **Face anti-spoofing method using contrastive learning and color jittering** | Da-Bin Kim, Seo-Yeon Oh,<br><ins><strong>Dongsu Kim</strong></ins>, Cheoneum Park,<br>Haneol Jang | *Journal of Digital Forensics*<br>Vol. 18, No. 5, pp. 40–49<br>2024 | [Paper](https://doi.org/10.22798/KDFS.2024.18.5.40) |
-| **Effective Data Augmentations for Cross-Domain Fingerprint Recognition** | <ins><strong>Dongsu Kim</strong></ins>, Seoyeon Oh,<br>Jisang Lee, Haneol Jang | *Journal of Digital Forensics*<br>Vol. 18, No. 1, pp. 24–33<br>2024 | [Paper](https://doi.org/10.22798/KDFS.2024.18.1.24) |
+| Paper & Authors | Publication |
+|:---|:---|
+| **JPEG-aware steganalysis: explicit frequency modeling with dequantized DCT for real-world JPEG images**<br><ins><strong>Dongsu&nbsp;Kim</strong></ins>, Jin-Cheol&nbsp;An, Youngjoon&nbsp;Yoo, Tae-Woo&nbsp;Oh, Haneol&nbsp;Jang | **Jul.&nbsp;2026**<br>*Scientific Reports*<br>Vol.&nbsp;16, Article&nbsp;30309<br>[Paper](https://doi.org/10.1038/s41598-026-59285-1) · [Code](https://github.com/berandaNuguri/jpeg-aware-steganalysis) |
+| **Image Distortion-Based Attention for JPEG Compressed-Domain Steganalysis**<br><ins><strong>Dongsu&nbsp;Kim</strong></ins>, Seo-Yeon&nbsp;Oh, Hae-Chul&nbsp;Choi, Tae-Woo&nbsp;Oh, Haneol&nbsp;Jang | **2025**<br>*Journal of Digital Forensics*<br>Vol.&nbsp;19, No.&nbsp;4, pp.&nbsp;43–58<br>[Paper](https://doi.org/10.22798/KDFS.2025.19.4.43) · [Code](https://github.com/berandaNuguri/ida-steganalysis) |
+| **Face anti-spoofing method using contrastive learning and color jittering**<br>Da-Bin&nbsp;Kim, Seo-Yeon&nbsp;Oh, <ins><strong>Dongsu&nbsp;Kim</strong></ins>, Cheoneum&nbsp;Park, Haneol&nbsp;Jang | **2024**<br>*Journal of Digital Forensics*<br>Vol.&nbsp;18, No.&nbsp;5, pp.&nbsp;40–49<br>[Paper](https://doi.org/10.22798/KDFS.2024.18.5.40) |
+| **Effective Data Augmentations for Cross-Domain Fingerprint Recognition**<br><ins><strong>Dongsu&nbsp;Kim</strong></ins>, Seoyeon&nbsp;Oh, Jisang&nbsp;Lee, Haneol&nbsp;Jang | **2024**<br>*Journal of Digital Forensics*<br>Vol.&nbsp;18, No.&nbsp;1, pp.&nbsp;24–33<br>[Paper](https://doi.org/10.22798/KDFS.2024.18.1.24) |
 
 **Conference Papers**
 
-| Paper | Authors | Publication | Links |
-|:---|:---|:---|:---:|
-| **Dual-Stream Dual-Backbone Architecture for HyperSpectral Face Anti-Spoofing** | <ins><strong>Dongsu Kim</strong></ins>, Seoyeon Oh,<br>Cheoneum Park, Haneol Jang | *15th International Conference on Information and Communication Technology Convergence (ICTC)*<br>pp. 1492–1493<br>Oct. 2024 | [Paper](https://doi.org/10.1109/ICTC62082.2024.10827355) |
-| **Face anti-spoofing method using contrastive learning and color jittering** | Dabin Kim, Seoyeon Oh,<br><ins><strong>Dongsu Kim</strong></ins>, Cheoneum Park,<br>Haneol Jang | *Korean Digital Forensic Society (KDFS) Winter Conference*<br>Dec. 2024 | — |
-| **Effective Detection of Generated Images Using Fast Fourier Transform and Discrete Cosine Transform** | Hyeongwon Seo, Jisang Lee,<br><ins><strong>Dongsu Kim</strong></ins>, Seoyeon Oh,<br>Haneol Jang | *Korean Digital Forensic Society (KDFS) Winter Conference*<br>Dec. 2023 | — |
-| **Effective Data Augmentations for Fingerprint Recognition** | <ins><strong>Dongsu Kim</strong></ins>, Jisang Lee,<br>Seoyeon Oh, Haneol Jang | *Korean Digital Forensic Society (KDFS) Summer Conference*<br>Jun. 2023 | — |
-| **Lightweight Fingerprint Forgery Detection Technique Utilizing Median Filter and Ensemble Model** | Jisang Lee, <ins><strong>Dongsu Kim</strong></ins>,<br>Seoyeon Oh, Haneol Jang | *Korean Digital Forensic Society (KDFS) Summer Conference*<br>Jun. 2023 | — |
-| **Lightweight Deep Convolutional Neural Networks for Fine-Grained Leaf Classification** | Seoyeon Oh, Jisang Lee,<br><ins><strong>Dongsu Kim</strong></ins>, Haneol Jang | *33rd Joint Conference on Communications and Information (JCCI)*<br>Apr. 2023 | — |
-| **Development of Optical Character Recognition Model for Document Leak Investigation** | Eojin Jang, Jisang Lee,<br><ins><strong>Dongsu Kim</strong></ins>, Seoyeon Oh,<br>Haneol Jang | *Korean Digital Forensic Society (KDFS) Winter Conference*<br>Dec. 2022 | — |
+| Paper & Authors | Publication |
+|:---|:---|
+| **Dual-Stream Dual-Backbone Architecture for HyperSpectral Face Anti-Spoofing**<br><ins><strong>Dongsu&nbsp;Kim</strong></ins>, Seoyeon&nbsp;Oh, Cheoneum&nbsp;Park, Haneol&nbsp;Jang | **Oct.&nbsp;2024**<br>*15th International Conference on Information and Communication Technology Convergence (ICTC)*<br>pp.&nbsp;1492–1493<br>[Paper](https://doi.org/10.1109/ICTC62082.2024.10827355) |
+| **Face anti-spoofing method using contrastive learning and color jittering**<br>Dabin&nbsp;Kim, Seoyeon&nbsp;Oh, <ins><strong>Dongsu&nbsp;Kim</strong></ins>, Cheoneum&nbsp;Park, Haneol&nbsp;Jang | **Dec.&nbsp;2024**<br>*Korean Digital Forensic Society (KDFS) Winter Conference* |
+| **Effective Detection of Generated Images Using Fast Fourier Transform and Discrete Cosine Transform**<br>Hyeongwon&nbsp;Seo, Jisang&nbsp;Lee, <ins><strong>Dongsu&nbsp;Kim</strong></ins>, Seoyeon&nbsp;Oh, Haneol&nbsp;Jang | **Dec.&nbsp;2023**<br>*Korean Digital Forensic Society (KDFS) Winter Conference* |
+| **Effective Data Augmentations for Fingerprint Recognition**<br><ins><strong>Dongsu&nbsp;Kim</strong></ins>, Jisang&nbsp;Lee, Seoyeon&nbsp;Oh, Haneol&nbsp;Jang | **Jun.&nbsp;2023**<br>*Korean Digital Forensic Society (KDFS) Summer Conference* |
+| **Lightweight Fingerprint Forgery Detection Technique Utilizing Median Filter and Ensemble Model**<br>Jisang&nbsp;Lee, <ins><strong>Dongsu&nbsp;Kim</strong></ins>, Seoyeon&nbsp;Oh, Haneol&nbsp;Jang | **Jun.&nbsp;2023**<br>*Korean Digital Forensic Society (KDFS) Summer Conference* |
+| **Lightweight Deep Convolutional Neural Networks for Fine-Grained Leaf Classification**<br>Seoyeon&nbsp;Oh, Jisang&nbsp;Lee, <ins><strong>Dongsu&nbsp;Kim</strong></ins>, Haneol&nbsp;Jang | **Apr.&nbsp;2023**<br>*33rd Joint Conference on Communications and Information (JCCI)* |
+| **Development of Optical Character Recognition Model for Document Leak Investigation**<br>Eojin&nbsp;Jang, Jisang&nbsp;Lee, <ins><strong>Dongsu&nbsp;Kim</strong></ins>, Seoyeon&nbsp;Oh, Haneol&nbsp;Jang | **Dec.&nbsp;2022**<br>*Korean Digital Forensic Society (KDFS) Winter Conference* |
 
 # Competitions
 
-| *Platform* | *Name* | *Summary* | *Team* | *Prize* | *Link* |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| DACON | 2022 SW-Centered University Joint AI Competition — Preliminary | Classification | AIM. Lab. | 🥇 **1st / 192** | [Leaderboard](https://dacon.io/competitions/official/235902/leaderboard) |
-| DACON | 2022 SW-Centered University Joint AI Competition — Final | OCR | AIM. Lab. | **10th / 77** · SW-Centered University Council President's Award | [Leaderboard](https://dacon.io/competitions/official/235970/leaderboard) |
-| DACON | 2023 SW-Centered University Joint AI Competition | Satellite Image Building Segmentation | — | SW-Centered University Council President's Award | [Competition](https://dacon.io/competitions/official/236092/overview/description) |
-| Share&Tech | Creative Design Competition for Underserved Communities | Section E | AIM | 🥇 HNU President's Award | [Award](https://user-images.githubusercontent.com/115712125/203897708-1a7bc4c2-fe91-4744-a34a-a2d949e9762a.png) |
-| CodaLab | Snapshot Spectral Imaging Face Anti-Spoofing Challenge — Phase 1 | Face Anti-Spoofing | AIM_Lab | **3rd / 19** | [Results](https://codalab.lisn.upsaclay.fr/competitions/17908#results) |
+| Competition | Task & Team | Result |
+|:---|:---|:---|
+| **2022 SW-Centered University Joint AI Competition<br>Preliminary**<br>DACON | Classification<br>Team: AIM.&nbsp;Lab. | 🥇 **1st&nbsp;/&nbsp;192**<br>[Leaderboard](https://dacon.io/competitions/official/235902/leaderboard) |
+| **2022 SW-Centered University Joint AI Competition<br>Final**<br>DACON | OCR<br>Team: AIM.&nbsp;Lab. | **10th&nbsp;/&nbsp;77**<br>SW-Centered University Council President's Award<br>[Leaderboard](https://dacon.io/competitions/official/235970/leaderboard) |
+| **2023 SW-Centered University Joint AI Competition**<br>DACON | Satellite Image Building Segmentation | SW-Centered University Council<br>President's Award<br>[Competition](https://dacon.io/competitions/official/236092/overview/description) |
+| **Creative Design Competition for Underserved Communities**<br>Share&Tech | Section E<br>Team: AIM | 🥇 HNU President's Award<br>[Award](https://user-images.githubusercontent.com/115712125/203897708-1a7bc4c2-fe91-4744-a34a-a2d949e9762a.png) |
+| **Snapshot Spectral Imaging Face Anti-Spoofing Challenge<br>Phase 1**<br>CodaLab | Face Anti-Spoofing<br>Team: AIM_Lab | **3rd&nbsp;/&nbsp;19**<br>[Results](https://codalab.lisn.upsaclay.fr/competitions/17908#results) |
 
 ### Awards & Honors
 
-| *Date* | *Award* | *Event* |
+| Date | Award | Event |
 |:---:|:---|:---|
-| Dec. 2024 | **Best Paper Award — Society President's Award** | Korean Digital Forensic Society Winter Conference |
-| Nov. 2024 | **Silver Award** | 13th College of Information Technology Project Exhibition, Hanbat National University |
+| Dec.&nbsp;2024 | **Best Paper Award<br>Society President's Award** | Korean Digital Forensic Society Winter Conference |
+| Nov.&nbsp;2024 | **Silver Award** | 13th College of Information Technology Project Exhibition<br>Hanbat National University |
 
 # Projects
 
 **AIMLab · Research Experience**
 
-| *Date* | *Type* | *Contents* | *Details* |
-|:---:|:---|:---|:---|
-| Mar. 2026–Present | National Security Research Institute · Research | Generative AI-Based Image Watermarking | Watermark data analysis; model and algorithm development |
-| Jan. 2026–Present | Independent Research | LLM-Based Text Steganography | Information hiding in generated text; resistance to steganalysis |
-| Apr. 2025–Jan. 2026 | Independent Research | Real-World JPEG Steganalysis Framework | RWSteg benchmark; dequantized DCT modeling; arbitrary-resolution ROI extraction; JPEG-parameter mismatch analysis |
-| Apr. 2025–Oct. 2025 | National Security Research Institute · Research | ROI Extraction & Hidden-Region Visualization | Steganography data analysis; steganalysis visualization; ROI extraction |
-| Jan. 2024–Sep. 2024 | Capstone Design | High-Accuracy Steganalysis Model | Adversarial training for steganalysis |
-| Apr. 2023–Oct. 2024 | National Security Research Institute · Research | Real-World Image Steganalysis | Mobile-image steganography dataset; robustness to cover-source mismatch |
-| Jul. 2022 | Lab Research | Undergraduate Researcher | Joined AIMLab, Hanbat National University · Computer Vision |
-| Jul. 2022–Sep. 2022 | Seminar | AI Fundamentals | Machine learning and deep learning fundamentals |
+| Period | Project & Organization | Focus |
+|:---:|:---|:---|
+| Mar.&nbsp;2026 – Present | **Generative AI-Based Image Watermarking**<br>National Security Research Institute · Research | Watermark data analysis<br>Model and algorithm development |
+| Jan.&nbsp;2026 – Present | **LLM-Based Text Steganography**<br>Independent Research | Information hiding in generated text<br>Resistance to steganalysis |
+| Apr.&nbsp;2025 – Jan.&nbsp;2026 | **Real-World JPEG Steganalysis Framework**<br>Independent Research | RWSteg benchmark<br>Dequantized DCT modeling<br>Arbitrary-resolution ROI extraction<br>JPEG-parameter mismatch analysis |
+| Apr.–Oct.&nbsp;2025 | **ROI Extraction & Hidden-Region Visualization**<br>National Security Research Institute · Research | Steganography data analysis<br>Steganalysis visualization<br>ROI extraction |
+| Jan.–Sep.&nbsp;2024 | **High-Accuracy Steganalysis Model**<br>Capstone Design | Adversarial training for steganalysis |
+| Apr.&nbsp;2023 – Oct.&nbsp;2024 | **Real-World Image Steganalysis**<br>National Security Research Institute · Research | Mobile-image steganography dataset<br>Robustness to cover-source mismatch |
+| Jul.&nbsp;2022 | **Undergraduate Researcher**<br>Lab Research | Joined AIMLab, Hanbat National University · Computer Vision |
+| Jul.–Sep.&nbsp;2022 | **AI Fundamentals**<br>Seminar | Machine learning and deep learning fundamentals |
 
 # Teaching Assistant
 
-**Hanbat National University · Teaching Assistant**
+**Hanbat National University · Instructor: Prof. Haneol Jang**
 
-| *Date* | *Class* | *Details* | *Professor* |
-|:---:|:---|:---|:---|
-| Sep. 2025–Dec. 2025 | Computer Vision | Teaching Assistant | Haneol Jang |
-| Mar. 2025–Jun. 2025 | Artificial Intelligence | Teaching Assistant | Haneol Jang |
-| Mar. 2024–Jun. 2024 | Artificial Intelligence and Machine Learning | Graduate course · Teaching Assistant | Haneol Jang |
-| Mar. 2024–Jun. 2024 | Artificial Intelligence and Applications | Undergraduate course · Teaching Assistant | Haneol Jang |
-| Mar. 2023–Jun. 2023 | Data Structures | Undergraduate course · Teaching Assistant | Haneol Jang |
+| Period | Course |
+|:---:|:---|
+| Sep.–Dec.&nbsp;2025 | **Computer Vision** |
+| Mar.–Jun.&nbsp;2025 | **Artificial Intelligence** |
+| Mar.–Jun.&nbsp;2024 | **Artificial Intelligence and Machine Learning**<br>Graduate course |
+| Mar.–Jun.&nbsp;2024 | **Artificial Intelligence and Applications**<br>Undergraduate course |
+| Mar.–Jun.&nbsp;2023 | **Data Structures**<br>Undergraduate course |
 
 # Contact
 
