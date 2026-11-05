@@ -56,7 +56,7 @@
 | Dec. 2024 | **Best Paper Award — Society President's Award** | Korean Digital Forensic Society Winter Conference |
 | Nov. 2024 | **Silver Award** | 13th College of Information Technology Project Exhibition, Hanbat National University |
 
-# Internship
+# Projects
 
 **AIMLab · Research Experience**
 
