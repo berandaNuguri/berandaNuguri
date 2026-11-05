@@ -1,5 +1,3 @@
-![berandaNuguri_README_banner](https://user-images.githubusercontent.com/115712125/201857181-9f63a836-febe-48f2-8c6a-43458f2c6a62.png)
-
 # Profile
 
 > **Dongsu Kim** · Computer Engineering · Hanbat National University  
