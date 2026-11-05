@@ -71,7 +71,7 @@
 | Jul. 2022 | Lab Research | Undergraduate Researcher | Joined AIMLab, Hanbat National University · Computer Vision |
 | Jul. 2022–Sep. 2022 | Seminar | AI Fundamentals | Machine learning and deep learning fundamentals |
 
-# Class Assistant Experience
+# Teaching Assistant
 
 **Hanbat National University · Teaching Assistant**
 
