@@ -1,9 +1,5 @@
 ![berandaNuguri_README_banner](https://user-images.githubusercontent.com/115712125/201857181-9f63a836-febe-48f2-8c6a-43458f2c6a62.png)
 
-## Repository Workflow
-
-[WORKFLOW_GUIDE.md — Project Structure & Code Upload Guidelines](https://github.com/berandaNuguri/berandaNuguri/blob/main/WORKFLOW_GUIDE.md)
-
 # Profile
 
 > **Dongsu Kim** · Computer Engineering · Hanbat National University  
