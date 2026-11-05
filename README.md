@@ -14,7 +14,7 @@
 
 <!-- ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=berandaNuguri&hide=prs,issues&theme=dark) -->
 
-### Publications
+# Publications
 
 **4 journal papers · 7 conference papers**
 
