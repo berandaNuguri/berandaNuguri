@@ -41,11 +41,11 @@
 
 | Competition | Task & Team | Result |
 |:---|:---|:---|
-| **2022 SW-Centered University Joint AI Competition<br>Preliminary**<br>DACON | Classification<br>Team: AIM.&nbsp;Lab. | 🥇 **1st&nbsp;/&nbsp;192**<br>[Leaderboard](https://dacon.io/competitions/official/235902/leaderboard) |
-| **2022 SW-Centered University Joint AI Competition<br>Final**<br>DACON | OCR<br>Team: AIM.&nbsp;Lab. | **10th&nbsp;/&nbsp;77**<br>SW-Centered University Council President's Award<br>[Leaderboard](https://dacon.io/competitions/official/235970/leaderboard) |
-| **2023 SW-Centered University Joint AI Competition**<br>DACON | Satellite Image Building Segmentation | SW-Centered University Council<br>President's Award<br>[Competition](https://dacon.io/competitions/official/236092/overview/description) |
-| **Creative Design Competition for Underserved Communities**<br>Share&Tech | Section E<br>Team: AIM | 🥇 HNU President's Award<br>[Award](https://user-images.githubusercontent.com/115712125/203897708-1a7bc4c2-fe91-4744-a34a-a2d949e9762a.png) |
-| **Snapshot Spectral Imaging Face Anti-Spoofing Challenge<br>Phase 1**<br>CodaLab | Face Anti-Spoofing<br>Team: AIM_Lab | **3rd&nbsp;/&nbsp;19**<br>[Results](https://codalab.lisn.upsaclay.fr/competitions/17908#results) |
+| **2022 SW-Centered University Joint AI Competition — Preliminary** (DACON) | Classification<br>Team: AIM.&nbsp;Lab. | 🥇 **1st&nbsp;/&nbsp;192**<br>[Leaderboard](https://dacon.io/competitions/official/235902/leaderboard) |
+| **2022 SW-Centered University Joint AI Competition — Final** (DACON) | OCR<br>Team: AIM.&nbsp;Lab. | **10th&nbsp;/&nbsp;77**<br>SW-Centered University Council President's Award<br>[Leaderboard](https://dacon.io/competitions/official/235970/leaderboard) |
+| **2023 SW-Centered University Joint AI Competition** (DACON) | Satellite Image Building Segmentation | SW-Centered University Council<br>President's Award<br>[Competition](https://dacon.io/competitions/official/236092/overview/description) |
+| **Creative Design Competition for Underserved Communities** (Share&Tech) | Section E<br>Team: AIM | 🥇 HNU President's Award<br>[Award](https://user-images.githubusercontent.com/115712125/203897708-1a7bc4c2-fe91-4744-a34a-a2d949e9762a.png) |
+| **Snapshot Spectral Imaging Face Anti-Spoofing Challenge — Phase 1** (CodaLab) | Face Anti-Spoofing<br>Team: AIM_Lab | **3rd&nbsp;/&nbsp;19**<br>[Results](https://codalab.lisn.upsaclay.fr/competitions/17908#results) |
 
 ### Awards & Honors
 
