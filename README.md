@@ -6,7 +6,7 @@
 > **M.S. Student** · Mar. 2025–Present · GPA **4.43/4.5**  
 > **B.S.** · Mar. 2019–Feb. 2025 · GPA **3.96/4.5** · Major GPA **4.21/4.5**  
 > **Artificial Intelligence & Media Lab. (AIMLab)** · Advisor: Prof. Haneol Jang  
-> [AIMLab Website](https://sites.google.com/view/aim-lab-hbnu/home)
+> [View CV (PDF)](./CV_kimdongsu_20261012.pdf) · [AIMLab Website](https://sites.google.com/view/aim-lab-hbnu/home)
 
 **Research:** Steganalysis · Image/Text Steganography · Generative AI-Based Watermarking  
 **Programming:** Python · Java · C · C++ · **Tools:** PyTorch · MATLAB  
