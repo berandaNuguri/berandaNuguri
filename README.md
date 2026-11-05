@@ -22,22 +22,22 @@
 
 | Paper | Authors | Publication | Links |
 |:---|:---|:---|:---:|
-| **JPEG-aware steganalysis: explicit frequency modeling with dequantized DCT for real-world JPEG images** | **Dongsu Kim**, Jin-Cheol An,<br>Youngjoon Yoo, Tae-Woo Oh,<br>Haneol Jang | *Scientific Reports*<br>Vol. 16, Article 30309<br>Jul. 2026 | [Paper](https://doi.org/10.1038/s41598-026-59285-1)<br>[Code](https://github.com/berandaNuguri/jpeg-aware-steganalysis) |
-| **Image Distortion-Based Attention for JPEG Compressed-Domain Steganalysis** | **Dongsu Kim**, Seo-Yeon Oh,<br>Hae-Chul Choi, Tae-Woo Oh,<br>Haneol Jang | *Journal of Digital Forensics*<br>Vol. 19, No. 4, pp. 43–58<br>2025 | [Paper](https://doi.org/10.22798/KDFS.2025.19.4.43)<br>[Code](https://github.com/berandaNuguri/ida-steganalysis) |
-| **Face anti-spoofing method using contrastive learning and color jittering** | Da-Bin Kim, Seo-Yeon Oh,<br>**Dongsu Kim**, Cheoneum Park,<br>Haneol Jang | *Journal of Digital Forensics*<br>Vol. 18, No. 5, pp. 40–49<br>2024 | [Paper](https://doi.org/10.22798/KDFS.2024.18.5.40) |
-| **Effective Data Augmentations for Cross-Domain Fingerprint Recognition** | **Dongsu Kim**, Seoyeon Oh,<br>Jisang Lee, Haneol Jang | *Journal of Digital Forensics*<br>Vol. 18, No. 1, pp. 24–33<br>2024 | [Paper](https://doi.org/10.22798/KDFS.2024.18.1.24) |
+| **JPEG-aware steganalysis: explicit frequency modeling with dequantized DCT for real-world JPEG images** | <ins><strong>Dongsu Kim</strong></ins>, Jin-Cheol An,<br>Youngjoon Yoo, Tae-Woo Oh,<br>Haneol Jang | *Scientific Reports*<br>Vol. 16, Article 30309<br>Jul. 2026 | [Paper](https://doi.org/10.1038/s41598-026-59285-1)<br>[Code](https://github.com/berandaNuguri/jpeg-aware-steganalysis) |
+| **Image Distortion-Based Attention for JPEG Compressed-Domain Steganalysis** | <ins><strong>Dongsu Kim</strong></ins>, Seo-Yeon Oh,<br>Hae-Chul Choi, Tae-Woo Oh,<br>Haneol Jang | *Journal of Digital Forensics*<br>Vol. 19, No. 4, pp. 43–58<br>2025 | [Paper](https://doi.org/10.22798/KDFS.2025.19.4.43)<br>[Code](https://github.com/berandaNuguri/ida-steganalysis) |
+| **Face anti-spoofing method using contrastive learning and color jittering** | Da-Bin Kim, Seo-Yeon Oh,<br><ins><strong>Dongsu Kim</strong></ins>, Cheoneum Park,<br>Haneol Jang | *Journal of Digital Forensics*<br>Vol. 18, No. 5, pp. 40–49<br>2024 | [Paper](https://doi.org/10.22798/KDFS.2024.18.5.40) |
+| **Effective Data Augmentations for Cross-Domain Fingerprint Recognition** | <ins><strong>Dongsu Kim</strong></ins>, Seoyeon Oh,<br>Jisang Lee, Haneol Jang | *Journal of Digital Forensics*<br>Vol. 18, No. 1, pp. 24–33<br>2024 | [Paper](https://doi.org/10.22798/KDFS.2024.18.1.24) |
 
 **Conference Papers**
 
 | Paper | Authors | Publication | Links |
 |:---|:---|:---|:---:|
-| **Dual-Stream Dual-Backbone Architecture for HyperSpectral Face Anti-Spoofing** | **Dongsu Kim**, Seoyeon Oh,<br>Cheoneum Park, Haneol Jang | *15th International Conference on Information and Communication Technology Convergence (ICTC)*<br>pp. 1492–1493<br>Oct. 2024 | [Paper](https://doi.org/10.1109/ICTC62082.2024.10827355) |
-| **Face anti-spoofing method using contrastive learning and color jittering** | Dabin Kim, Seoyeon Oh,<br>**Dongsu Kim**, Cheoneum Park,<br>Haneol Jang | *Korean Digital Forensic Society (KDFS) Winter Conference*<br>Dec. 2024 | — |
-| **Effective Detection of Generated Images Using Fast Fourier Transform and Discrete Cosine Transform** | Hyeongwon Seo, Jisang Lee,<br>**Dongsu Kim**, Seoyeon Oh,<br>Haneol Jang | *Korean Digital Forensic Society (KDFS) Winter Conference*<br>Dec. 2023 | — |
-| **Effective Data Augmentations for Fingerprint Recognition** | **Dongsu Kim**, Jisang Lee,<br>Seoyeon Oh, Haneol Jang | *Korean Digital Forensic Society (KDFS) Summer Conference*<br>Jun. 2023 | — |
-| **Lightweight Fingerprint Forgery Detection Technique Utilizing Median Filter and Ensemble Model** | Jisang Lee, **Dongsu Kim**,<br>Seoyeon Oh, Haneol Jang | *Korean Digital Forensic Society (KDFS) Summer Conference*<br>Jun. 2023 | — |
-| **Lightweight Deep Convolutional Neural Networks for Fine-Grained Leaf Classification** | Seoyeon Oh, Jisang Lee,<br>**Dongsu Kim**, Haneol Jang | *33rd Joint Conference on Communications and Information (JCCI)*<br>Apr. 2023 | — |
-| **Development of Optical Character Recognition Model for Document Leak Investigation** | Eojin Jang, Jisang Lee,<br>**Dongsu Kim**, Seoyeon Oh,<br>Haneol Jang | *Korean Digital Forensic Society (KDFS) Winter Conference*<br>Dec. 2022 | — |
+| **Dual-Stream Dual-Backbone Architecture for HyperSpectral Face Anti-Spoofing** | <ins><strong>Dongsu Kim</strong></ins>, Seoyeon Oh,<br>Cheoneum Park, Haneol Jang | *15th International Conference on Information and Communication Technology Convergence (ICTC)*<br>pp. 1492–1493<br>Oct. 2024 | [Paper](https://doi.org/10.1109/ICTC62082.2024.10827355) |
+| **Face anti-spoofing method using contrastive learning and color jittering** | Dabin Kim, Seoyeon Oh,<br><ins><strong>Dongsu Kim</strong></ins>, Cheoneum Park,<br>Haneol Jang | *Korean Digital Forensic Society (KDFS) Winter Conference*<br>Dec. 2024 | — |
+| **Effective Detection of Generated Images Using Fast Fourier Transform and Discrete Cosine Transform** | Hyeongwon Seo, Jisang Lee,<br><ins><strong>Dongsu Kim</strong></ins>, Seoyeon Oh,<br>Haneol Jang | *Korean Digital Forensic Society (KDFS) Winter Conference*<br>Dec. 2023 | — |
+| **Effective Data Augmentations for Fingerprint Recognition** | <ins><strong>Dongsu Kim</strong></ins>, Jisang Lee,<br>Seoyeon Oh, Haneol Jang | *Korean Digital Forensic Society (KDFS) Summer Conference*<br>Jun. 2023 | — |
+| **Lightweight Fingerprint Forgery Detection Technique Utilizing Median Filter and Ensemble Model** | Jisang Lee, <ins><strong>Dongsu Kim</strong></ins>,<br>Seoyeon Oh, Haneol Jang | *Korean Digital Forensic Society (KDFS) Summer Conference*<br>Jun. 2023 | — |
+| **Lightweight Deep Convolutional Neural Networks for Fine-Grained Leaf Classification** | Seoyeon Oh, Jisang Lee,<br><ins><strong>Dongsu Kim</strong></ins>, Haneol Jang | *33rd Joint Conference on Communications and Information (JCCI)*<br>Apr. 2023 | — |
+| **Development of Optical Character Recognition Model for Document Leak Investigation** | Eojin Jang, Jisang Lee,<br><ins><strong>Dongsu Kim</strong></ins>, Seoyeon Oh,<br>Haneol Jang | *Korean Digital Forensic Society (KDFS) Winter Conference*<br>Dec. 2022 | — |
 
 # Competitions
 
