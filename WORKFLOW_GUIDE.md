@@ -3,8 +3,8 @@
 > Upload only the code, shared configuration, dependencies, required static resources, and minimal documentation needed to run a project.
 > Keep CSV files, figures, datasets, trained weights, experiment results, manuscripts, and logs locally or in separate storage.
 
-- Created / updated: 2026-11-04 (Asia/Seoul)
-- Version: 1.5
+- Created: 2026-11-04 / Updated: 2026-11-09 (Asia/Seoul)
+- Version: 1.6
 - Scope: Repository organization, research and competition code structure, uploads, and maintenance for personal GitHub projects.
 - This document defines how to reorganize projects. Publishing it does not move local directories or upload research code automatically.
 
@@ -260,6 +260,29 @@ tracking:
 - Make external tracking, such as W&B, optional. Training and evaluation must also work with tracking disabled.
 - Save raw results to excluded paths. Keep public-safe configuration, seeds, data versions, commits, and environment details in local run records.
 
+### 5.1 W&B Experiment Tracking
+
+Apply this convention to every project that uses W&B. Keep project-specific algorithms, datasets, models and processing options in config fields.
+
+```text
+Workspace: <individual-or-team>
+└── Project: <project-slug>
+    └── Group: <experiment_id>
+        ├── Run: <job_type>__<condition>__seed<seed>__trial<trial>
+        └── ...
+```
+
+- Project: an independently managed project, usually corresponding to a repository. A model, dataset or parameter change alone does not require another Project.
+- Group: runs addressing one comparison question. Default ID: `YYYYMMDD_<experiment-slug>_v<version>`, using Asia/Seoul dates.
+- Run: one execution with fixed settings. Change the run for a different condition, seed, trial or stage. Use `job_type` for the actual task, such as `prepare`, `generate`, `train`, `evaluate` or `analyze`.
+- Keep `experiment_id`, `condition`, `seed`, `trial`, `job_type`, effective settings, code commit/dirty status, data version/hash/split, model revision, environment, final status and actual output directory in run metadata. Use N/A for inapplicable fields and do not invent missing provenance.
+- Link dependent executions through source-data and training run IDs. A display name is not a unique run ID; resume only the intended run after checking its settings.
+- For new projects, default to `results/<experiment_id>/<run_name>/` with local config, metrics and outputs. Preserve established layouts and record explicit Group/Run/output-directory mappings instead of automatically moving historical results.
+- Log progress/final metrics, compact tables and a small fixed set of examples. Keep large datasets, outputs and weights under their separate storage policy. Do not log credentials, secret keys or secret messages.
+- Keep tracking optional. Personal entities and authentication belong in private settings/environment variables. Exclude W&B run folders, caches, account settings and binary logs from Git.
+- Validate Project/Group/Run names, config, metrics and local-path linkage on a small run before a full campaign. Document the convention separately from implementing the SDK, authenticating, uploading or restarting an interrupted experiment.
+- Project AGENTS.md files and templates should reference this section and record only their local mapping and additional metrics. The personal Notion AGENTS.md provides the user-facing common entry point; do not create local copies of Notion guides.
+
 ## 6. Migrating Existing Research Projects
 
 1. Read the project's AGENTS.md and README. Check the Git root, branch, remote URL, and existing changes.
@@ -374,6 +397,8 @@ Other management documents in personal Notion serve separate purposes and are no
 - [Python package src layout](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/)
 
 ## Changelog
+
+- 2026-11-09 · v1.6: Added a project-independent W&B convention for hierarchy, names, common metadata, local-result mapping and logging/storage boundaries.
 
 - 2026-11-04 · v1.5: Explicitly excluded W&B run/account artifacts, metadata/summary/history files, binary logs and local credential files; kept authentication outside tracked code.
 
